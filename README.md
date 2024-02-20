@@ -11,7 +11,7 @@ Technological advances in science and research are making it possible for rapid 
 
 The Viral Genomics and Bioinformatics course will teach participants how to analyse viral genome sequences and interpret genomic data obtained by high-throughput sequencing. The use of the command line to analyse viral NGS data, quality control of sequences, reference mapping and de novo assembly of viral genomes, pathogen identification from metagenomics data, and creating phylogenetic trees will be covered in the course.
 
-[Course website]https://coursesandconferences.wellcomeconnectingscience.org/event/viral-genomics-and-bioinformatics-asia-20240512/
+[Course website](https://coursesandconferences.wellcomeconnectingscience.org/event/viral-genomics-and-bioinformatics-asia-20240512/)
 
 Shield: [![CC BY 4.0][cc-by-shield]][cc-by]
 
