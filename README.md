@@ -13,6 +13,19 @@ The Viral Genomics and Bioinformatics course will teach participants how to anal
 
 [Course website](https://coursesandconferences.wellcomeconnectingscience.org/event/viral-genomics-and-bioinformatics-asia-20240512/)
 
+## Training Team
+
+- [Le Van Tan](https://www.oucru.org/people/le-van-tan/), Oxford University Clinical Research Unit (OUCRU), Vietnam
+- [Urmila Kulkani Kale](https://www.precisionmedicineforum.com/nordic-speakers-23/dr-urmila-kulkarni-kale/), Savitribai Phule Pune University, India
+- [Sreenu Vattipally](https://www.gla.ac.uk/schools/infectionimmunity/staff/sreenuvattipally/), MRC-University of Glasgow Centre for Virus Research, UK
+- [Srikeerthana Kuchi](https://www.gla.ac.uk/schools/infectionimmunity/staff/srikeerthanakuchi/), MRC-University of Glasgow Centre for Virus Research, UK
+- [Richard Orton](https://www.gla.ac.uk/researchinstitutes/iii/staff/richardorton/), MRC-University of Glasgow Centre for Virus Research, UK
+- [Thiên Tran Ba](https://orcid.org/0009-0007-2964-7747), Oxford University Clinical Research Unit, Vietnam
+- Hong Nguyen, Oxford University Clinical Research Unit, Vietnam
+- [Ny Nguyen Thi Han](https://orcid.org/0000-0002-9833-2921), Oxford University Clinical Research Unit, Vietnam
+- [Sanket Limaye](https://www.linkedin.com/in/sanket-limaye-2551b6105/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app), Savitribai Phule Pune University, India
+- [Jonathan Chan](https://www.linkedin.com/in/jonathan-chan-669129120/), University of Malaysia, Sarawak, Malaysia
+
 Shield: [![CC BY 4.0][cc-by-shield]][cc-by]
 
 This work is licensed under a
