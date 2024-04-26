@@ -1,0 +1,100 @@
+gi|116326654|ref|NC_008523.1| Tomato leaf curl Karnataka virus-associated DNA beta DNA-A, complete genome |1358
+gi|116326656|ref|NC_008524.1| Tomato leaf curl virus-Pune-associated DNA beta DNA-A, complete genome |1380
+gi|116536742|ref|NC_008517.1| Tomato leaf curl Pune virus, complete genome |2756
+gi|1189489108|ref|NC_034480.1| Bwamba virus strain M459 segment S nucleoprotein and nonstructural protein NSs genes, complete cds |1096
+gi|1189489111|ref|NC_034481.1| Nyando virus strain MP401 segment S nucleoprotein and nonstructural protein NSs genes, complete cds |902
+gi|1189489154|ref|NC_034501.1| Kaeng Khoi virus strain PSC-19 segment S nucleoprotein and nonstructural protein NSs genes, complete cds |975
+gi|1215835591|ref|NC_035211.1| Human fecal virus Jorvi4, complete genome |2343
+gi|1215835602|ref|NC_035213.1| Human fecal virus Jorvi3, complete genome |1942
+gi|13277517|ref|NC_001653.2| Hepatitis delta virus, complete genome |1682
+gi|1328406490|ref|NC_036615.1| Influenza D virus (D/swine/Oklahoma/1334/2011) segment 2 polymerase PB1 (PB1) gene, complete cds |2330
+gi|1328406492|ref|NC_036616.1| Influenza D virus (D/swine/Oklahoma/1334/2011) segment 1 polymerase PB2 (PB2) gene, complete cds |2364
+gi|1328406494|ref|NC_036617.1| Influenza D virus (D/swine/Oklahoma/1334/2011) segment 5 nucleoprotein (NP) gene, complete cds |1775
+gi|1328406496|ref|NC_036618.1| Influenza D virus (D/swine/Oklahoma/1334/2011) segment 4 hemagglutinin-esterase precursor (HEF) gene, complete cds |2049
+gi|1328406498|ref|NC_036619.1| Influenza D virus (D/swine/Oklahoma/1334/2011) segment 3 polymerase 3 (P3) gene, complete cds |2195
+gi|1328406500|ref|NC_036620.1| Influenza D virus (D/swine/Oklahoma/1334/2011) segment 6 P42 (P42) gene, complete cds |1219
+gi|1328406502|ref|NC_036621.1| Influenza D virus (D/swine/Oklahoma/1334/2011) segment 7 nonstructural protein 2 (NS2) and nonstructural protein 1 (NS1) genes, complete cds |868
+gi|134133206|ref|NC_009225.1| Torque teno midi virus 1, complete genome |3245
+gi|1464289562|ref|NC_038260.1| Cebine herpesvirus 1 strain 5567 DNA polymerase catalytic subunit (UL54) gene, complete cds |3075
+gi|1464307139|ref|NC_038345.1| Torque teno mini virus 10 isolate LIL-y1 ORF2, ORF1, ORF3, and ORF4 genes, complete cds |2887
+gi|1464307144|ref|NC_038346.1| Torque teno mini virus 11 isolate LIL-y2 ORF2, ORF1, and ORF3 genes, complete cds |2871
+gi|1464307154|ref|NC_038347.1| Torque teno mini virus 12 isolate LIL-y3 ORF2, ORF1, ORF3, and ORF4 genes, complete cds |2912
+gi|1464307169|ref|NC_038348.1| Torque teno tupaia virus ORF3, ORF2, ORF1 genes for hypothetical proteins, complete cds, isolate: Tbc-TTV14 |2199
+gi|1464307175|ref|NC_038349.1| Torque teno felis virus 2 isolate PRA1 ORF2, ORF1, and ORF3 genes, complete cds |2019
+gi|1464307179|ref|NC_038350.1| Torque teno midi virus 3 isolate 2PoSMA ORF2 and ORF1 genes, complete cds |2002
+gi|1464307182|ref|NC_038351.1| Torque teno midi virus 4 isolate 6PoSMA ORF2, ORF1, and ORF3 genes, complete cds |2454
+gi|1464307186|ref|NC_038352.1| Torque teno midi virus 5 DNA, complete genome, isolate: MDJHem2 |3208
+gi|1464307191|ref|NC_038353.1| Torque teno midi virus 6 DNA, complete genome, isolate: MDJHem3-1 |3198
+gi|1464307196|ref|NC_038354.1| Torque teno midi virus 7 DNA, complete genome, isolate: MDJHem3-2 |3197
+gi|1464307201|ref|NC_038355.1| Torque teno midi virus 8 DNA, complete genome, isolate: MDJN1 |3223
+gi|1464307206|ref|NC_038356.1| Torque teno midi virus 9 DNA, complete genome, isolate: MDJN2 |3187
+gi|1464307211|ref|NC_038357.1| Torque teno midi virus 10 DNA, complete genome, isolate: MDJN14 |3175
+gi|1464307216|ref|NC_038358.1| Torque teno midi virus 11 DNA, complete genome, isolate: MDJN47 |3198
+gi|1464307221|ref|NC_038359.1| Torque teno midi virus 12 DNA, complete genome, isolate: MDJN51 |3187
+gi|1464307226|ref|NC_038360.1| Torque teno midi virus 13 DNA, complete genome, isolate: MDJN69 |3230
+gi|1464307231|ref|NC_038361.1| Torque teno midi virus 14 DNA, complete genome, isolate: MDJN97 |3223
+gi|1464307246|ref|NC_038364.1| Loie River virus isolate R5074 glycoprotein precursor (GPC) and nucleocapsid protein (NP) genes, complete cds |3344
+gi|1464307772|ref|NC_038392.1| Human stool-associated circular virus NG13, complete genome |1699
+gi|172088171|ref|NC_010562.1| Chapare virus segment S, complete sequence |3357
+gi|22256027|ref|NC_004110.1| La Crosse virus segment S, complete genome |984
+gi|29337246|ref|NC_004655.1| East African cassava mosaic Zanzibar virus DNA-A, complete genome |2785
+gi|295413915|ref|NC_014068.1| Torque teno mini virus 8, complete genome |2910
+gi|295441891|ref|NC_014093.1| Torque teno midi virus 2, complete genome |3253
+gi|295441901|ref|NC_014095.1| Torque teno mini virus 6, complete genome |2897
+gi|295441908|ref|NC_014097.1| Torque teno mini virus 1, complete genome |2856
+gi|29570853|ref|NC_004656.2| East African cassava mosaic Zanzibar virus DNA B, complete sequence |2763
+gi|302596924|ref|NC_014395.1| Rift Valley fever virus segment S, complete genome |1690
+gi|312234429|ref|NC_014092.2| Torque teno sus virus k2a isolate 2p, complete genome |2735
+gi|32140160|ref|NC_004906.1| Influenza A virus (A/Hong Kong/1073/99(H9N2)) segment 8, complete sequence |890
+gi|32140163|ref|NC_004908.1| Influenza A virus ha gene for Hemagglutinin, genomic RNA, strain A/Hong Kong/1073/99(H9N2) |1714
+gi|32140165|ref|NC_004909.1| Influenza A virus na gene for neuraminidase, genomic RNA, strain A/Hong Kong/1073/99(H9N2) |1418
+gi|32140167|ref|NC_004910.1| Influenza A virus pb2 gene for polymerase Pb2, genomic RNA, strain A/Hong Kong/1073/99(H9N2) |2341
+gi|32140169|ref|NC_004911.1| Influenza A virus pb1 gene for polymerase Pb1, genomic RNA, strain A/Hong Kong/1073/99(H9N2) |2328
+gi|32140171|ref|NC_004912.1| Influenza A virus pa gene for polymerase PA, genomic RNA, strain A/Hong Kong/1073/99(H9N2) |2225
+gi|32141421|ref|NC_004907.1| Influenza A virus (A/Hong Kong/1073/99(H9N2)) segment 7, complete sequence |1025
+gi|394922884|ref|NC_017091.1| Gyrovirus GyV3, complete genome |2359
+gi|401829632|ref|NC_018481.1| CAS virus segment S, complete genome |3368
+gi|594139507|ref|NC_023761.1| Boa arenavirus NL isolate 3 segment S, complete sequence |3351
+gi|605039172|ref|NC_023888.1| Circo-like virus-Brazil hs1, complete genome |2526
+gi|658609068|ref|NC_024443.1| Roundleaf bat hepatitis B virus isolate RBHBV/GB09-256/Hip_rub/GAB/2009, complete genome |3368
+gi|658609087|ref|NC_024445.1| Tent-making bat hepatitis B virus isolate TBHBV/Pan372/Uro_bil/PAN/2010, complete genome |3149
+gi|667699603|ref|NC_024496.1| Heartland virus isolate Patient1 segment S, complete sequence |1772
+gi|672550932|ref|NC_024689.1| HCBI8.215 virus complete sequence |2152
+gi|672550936|ref|NC_024690.1| HCBI9.212 virus complete sequence |2121
+gi|672550940|ref|NC_024691.1| MSSI2.225 virus complete sequence |2259
+gi|71658849|ref|NC_007219.1| Cotton leaf curl Bangalore virus-associated DNA beta, complete genome |1355
+gi|71849678|ref|NC_007290.1| Cotton leaf curl Bangalore virus segment A, complete genome |2751
+gi|727071839|ref|NC_025726.1| Torque teno mini virus ALA22, complete genome |2914
+gi|727071843|ref|NC_025727.1| Torque teno mini virus ALH8, complete genome |2855
+gi|73912682|ref|NC_007375.1| Influenza A virus (A/Korea/426/1968(H2N2)) segment 2, complete sequence |2341
+gi|73918825|ref|NC_007378.1| Influenza A virus (A/Korea/426/1968(H2N2)) segment 1, complete sequence |2341
+gi|73921303|ref|NC_007382.1| Influenza A virus (A/Korea/426/1968(H2N2)) segment 6, complete sequence |1410
+gi|73921306|ref|NC_007381.1| Influenza A virus (A/Korea/426/1968(H2N2)) segment 5, complete sequence |1497
+gi|73921565|ref|NC_007380.1| Influenza A virus (A/Korea/426/1968(H2N2)) segment 8, complete sequence |838
+gi|751868323|ref|NC_026282.1| Maprik virus isolate MK7532 segment S, complete sequence |911
+gi|752901088|ref|NC_026422.1| Influenza A virus (A/Shanghai/02/2013(H7N9)) segment 1 polymerase PB2 (PB2) gene, complete cds |2280
+gi|752901090|ref|NC_026423.1| Influenza A virus (A/Shanghai/02/2013(H7N9)) segment 2 polymerase PB1 (PB1) and PB1-F2 protein (PB1-F2) genes, complete cds |2297
+gi|752901093|ref|NC_026424.1| Influenza A virus (A/Shanghai/02/2013(H7N9)) segment 3 polymerase PA (PA) and PA-X protein (PA-X) genes, complete cds |2176
+gi|752901096|ref|NC_026425.1| Influenza A virus (A/Shanghai/02/2013(H7N9)) segment 4 hemagglutinin (HA) gene, complete cds |1708
+gi|752901100|ref|NC_026426.1| Influenza A virus (A/Shanghai/02/2013(H7N9)) segment 5 nucleocapsid protein (NP) gene, complete cds |1506
+gi|752901102|ref|NC_026427.1| Influenza A virus (A/Shanghai/02/2013(H7N9)) segment 7 matrix protein 2 (M2) and matrix protein 1 (M1) genes, complete cds |985
+gi|752901105|ref|NC_026428.1| Influenza A virus (A/Shanghai/02/2013(H7N9)) segment 8 nuclear export protein (NEP) and nonstructural protein 1 (NS1) genes, complete cds |841
+gi|752901108|ref|NC_026429.1| Influenza A virus (A/Shanghai/02/2013(H7N9)) segment 6 neuraminidase (NA) gene, complete cds |1398
+gi|758899349|ref|NC_026431.1| Influenza A virus (A/California/07/2009(H1N1)) segment 7 matrix protein 2 (M2) and matrix protein 1 (M1) genes, complete cds |982
+gi|758899352|ref|NC_026432.1| Influenza A virus (A/California/07/2009(H1N1)) segment 8 nuclear export protein (NEP) and nonstructural protein 1 (NS1) genes, complete cds |863
+gi|758899355|ref|NC_026433.1| Influenza A virus (A/California/07/2009(H1N1)) segment 4 hemagglutinin (HA) gene, complete cds |1701
+gi|758899359|ref|NC_026434.1| Influenza A virus (A/California/07/2009(H1N1)) segment 6 neuraminidase (NA) gene, complete cds |1410
+gi|758899361|ref|NC_026435.1| Influenza A virus (A/California/07/2009(H1N1)) segment 2 polymerase PB1 (PB1) gene, complete cds; and nonfunctional PB1-F2 protein (PB1-F2) gene, complete sequence |2274
+gi|758899363|ref|NC_026436.1| Influenza A virus (A/California/07/2009(H1N1)) segment 5 nucleocapsid protein (NP) gene, complete cds |1497
+gi|758967835|ref|NC_026437.1| Influenza A virus (A/California/07/2009(H1N1)) segment 3 polymerase PA (PA) gene, complete cds |2151
+gi|758967842|ref|NC_026438.1| Influenza A virus (A/California/07/2009(H1N1)) segment 1 polymerase PB2 (PB2) gene, complete cds |2280
+gi|807743919|ref|NC_026817.1| Human genital-associated circular DNA virus-1 isolate 349, complete genome |2235
+gi|80984706|ref|NC_007546.1| Rotavirus C segment 2, complete sequence |2736
+gi|81097459|ref|NC_007547.1| Rotavirus C segment 1, complete sequence |3309
+gi|821316987|ref|NC_027059.1| Torque teno sus virus 1b isolate 1p, complete genome |2872
+gi|8486125|ref|NC_002017.1| Influenza A virus (A/Puerto Rico/8/1934(H1N1)) segment 4, complete sequence |1778
+gi|8486127|ref|NC_002018.1| Influenza A virus (A/Puerto Rico/8/1934(H1N1)) segment 6, complete sequence |1413
+gi|8486129|ref|NC_002019.1| Influenza A virus (A/Puerto Rico/8/1934(H1N1)) segment 5, complete sequence |1565
+gi|8486134|ref|NC_002021.1| Influenza A virus (A/Puerto Rico/8/1934(H1N1)) segment 2, complete sequence |2341
+gi|93163150|ref|NC_004905.2| Influenza A virus (A/Hong Kong/1073/99(H9N2)) segment 5, complete sequence |1557
+gi|941241313|ref|NC_003977.2| Hepatitis B virus (strain ayw) genome |3182
