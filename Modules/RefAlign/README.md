@@ -163,7 +163,7 @@ bwa mem -t 4 deng1.fasta deng_sim_R1.fq deng_sim_R2.fq > denv1.sam
 7. **>** = direct the output into a file
 8. **denv1.sam** = the name of the output SAM file to create 
 
-Overall, this command will create an output file called 1b.sam in the current directory, which contains the results (in SAM format) of aligning all our reads to the reference sequence deng1.fasta.
+Overall, this command will create an output file called denv1.sam in the current directory, which contains the results (in SAM format) of aligning all our reads to the reference sequence deng1.fasta.
 
 When bwa has finished (and your prompt comes back), check that the SAM file has been created.
 
@@ -180,7 +180,7 @@ A common mistake is not waiting for your previous command to finish, and enterin
 
 Typically, a SAM file contains a single line for each read in the data set, and this line stores the alignment result of each read (reference name, alignment location, CIGAR string, the read sequence itself, quality, etc).
 
-SAM files are in a text format (which you can open and view if you like: head 1b.sam), but can take up a lot of disk storage space. It is good practice to convert your SAM files to BAM (Binary Alignment Map) files, which are compressed binary versions of the same data, and can be sorted and indexed easily to make searches faster. We will use [samtools](https://samtools.github.io) to convert our SAM to BAM, and sort and index the BAM file:
+SAM files are in a text format (which you can open and view if you like: head denv1.sam), but can take up a lot of disk storage space. It is good practice to convert your SAM files to BAM (Binary Alignment Map) files, which are compressed binary versions of the same data, and can be sorted and indexed easily to make searches faster. We will use [samtools](https://samtools.github.io) to convert our SAM to BAM, and sort and index the BAM file:
 
 ```
 samtools sort denv1.sam -o denv1.bam
@@ -192,14 +192,14 @@ samtools index denv1.bam
 
 ***Command breakdown:***
 
-1.	The first command tells samtools to **sort** the SAM file, and to also output (**-o**)the sorted data in BAM format to a file called **1b.bam**
-2.	We then use samtools to **index** the BAM file 1b.bam (indexing [which relies on sorted data] enables faster searches downstream).
+1.	The first command tells samtools to **sort** the SAM file, and to also output (**-o**)the sorted data in BAM format to a file called **denv1.bam**
+2.	We then use samtools to **index** the BAM file denv1.bam (indexing [which relies on sorted data] enables faster searches downstream).
 
 
 There should now be two new files in the directory called: 
 
-**1b.bam** (the BAM file)  
-**1b.bam.bai** (the BAM index file) 
+**denv1.bam** (the BAM file)  
+**denv1.bam.bai** (the BAM index file) 
 
 Now let’s list (ls) the contents of the directory to check we have our new files, and also check out their sizes:
 
@@ -219,7 +219,7 @@ ls -lh
 
 **NB:** If your SAM file is 0B (i.e. 0 bytes, empty) then something went wrong with the bwa alignment step, so restart from there. If you SAM file is fine (i.e. >0), but your BAM file is 0B (i.e. empty), then something went wrong with your SAM to BAM conversion so re-do that step. 
 
-We don’t need our original SAM file anymore (as we have the BAM file now) so we remove (rm) the SAM file 1b.sam:
+We don’t need our original SAM file anymore (as we have the BAM file now) so we remove (rm) the SAM file denv1.sam:
 
 ```
 rm denv1.sam
@@ -238,7 +238,7 @@ samtools view -c -f4 denv1.bam
 
 ***Command breakdown***
 
-1.	**samtools view** = to view the file 1b.bam
+1.	**samtools view** = to view the file denv1.bam
 2.	**–c** = count the read alignments
 3.	**–f4** = only include read alignments that do have the unmapped flag 4
 
@@ -249,7 +249,7 @@ samtools view -c -F4 denv1.bam
 
 ***Command breakdown***
 
-1.	**samtools view** = to view the file 1b.bam
+1.	**samtools view** = to view the file denv1.bam
 2.	**–c** = count the read alignments
 3.	**–F4** = skip read alignments that contain the unmapped Flag 4 
 
@@ -281,7 +281,7 @@ For small RNA viruses, secondary and supplementary alignments tend to be rare, b
 
 # 3: Alignment on your own
 
-You now need to use bwa to align the reads to the deng3.fasta reference sequence – later in the visualisation and summary statistics section we will be comparing the 1a vs 1b alignment results.
+You now need to use bwa to align the reads to the deng3.fasta reference sequence – later in the visualisation and summary statistics section we will be comparing the denv1 vs denv3 alignment results.
 
 You need to work out the commands yourself based on the previous commands for the deng1.fasta reference. 
 
@@ -397,7 +397,7 @@ An explanation of this command is:
 2.	**--bam**: flag to signify input bam file
 3.	**denv1.bam**: the name of our bam file to analyse
 4.	**--html**: flag to signify output html file
-5.	**1b**: the name prefix to use for the output
+5.	**denv1**: the name prefix to use for the output
 
 If you list the contents of the directory you should see that a folder called **denv1\_html\_results** has been created:
 
