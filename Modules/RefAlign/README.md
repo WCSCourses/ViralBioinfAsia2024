@@ -527,7 +527,175 @@ Remember that you need to close Tablet down in order to get your command line ba
 Either click on the red cross in the top left hand corner, or click the Tablet icon (red circle) (located above Open Assembly) and select Exit Tablet.
 
 
+# 6: Consensus sequence generation
 
+We have now aigned our DENV sample to the dengue serotype 3 reference genome sequence, and now we want to call a consensus sequence.
+
+What is a consensus sequence? At each genome position in the SAM/BAM alignment file, call the most frequent nucleotide (or insertion/deletion) observed in all of the reads aligned at the position. 
+
+In this practical, we will use a tool called [iVar](https://andersen-lab.github.io/ivar/html/manualpage.html) to call the consensus sequence, which utilises the [mpileup](http://www.htslib.org/doc/samtools-mpileup.html) function of samtools.
+
+First, lets make sure we are in the correct directory
+
+```
+cd ~/RefAlign/Dengue
+```
+
+And now call the consenus for the sample using iVar:
+
+```
+samtools mpileup -aa -A -d 0 -Q 0 denv3.bam | ivar consensus -p denv3_consensus -t 0.4
+```
+
+Breaking this command down, there are two parts:
+
+1. samtools [mpileup](http://www.htslib.org/doc/samtools-mpileup.html) which essentially outputs the base and indel counts for each genome position
+	* **-aa** = output data for absolutely all positions (even zero coverage ones)
+	* **-A** = count orphan reads (reads whose pair did not map)
+	* **-d 0** = override the maximum depth (default is 8000 which is typically too low for viruses)
+	* **-Q 0** = minimum base quality, 0 essentially means all the data
+2. ivar [consensus](https://andersen-lab.github.io/ivar/html/manualpage.html) - this calls the consensus - the output of the samtools mpileup command is piped '|' directly into ivar
+	* -p denv3_consensus = prefix with which to name the output file
+	* -t 0.4 = the minimum frequency threshold that a base must match to be used in calling the consensus base at a position. In this case, an ambiguity code will be used if more than one base is > 40% (0.4). See [iVar manual](https://andersen-lab.github.io/ivar/html/manualpage.html)
+
+By default, iVar consensus uses a minimum depth (-m) of 10 and a minimum base quality (-q) of 20 to call the consensus; these defaults can be changed by using the appropriate arguments. If a genome position has a depth less than the minimum, an 'N' base will be used in the consensus sequence by default.
+
+iVar will output some basic statistics to the screen such as:
+
+```
+#DO NOT ENTER THIS - IT IS AN EXAMPLE OF AN IVAR OUTPUT:
+[mpileup] 1 samples in 1 input files
+[mpileup] Max depth set to maximum value (2147483647)
+Minimum Quality: 20
+Threshold: 0.4
+Minimum depth: 10
+Minimum Insert Threshold: 0.8
+Regions with depth less than minimum depth covered by: N
+Reference length: 10707
+Positions with 0 depth: 0
+Positions with depth below 10: 5
+```
+
+and when it has finished (and your prompt returns) you should see our consensus sequence (denv3_consensus.fa) in the directory:
+
+```
+ls
+```
+
+which you can view the sequence via the command line (we will be covering variants later):
+
+```
+more denv3_consensus.fa 
+```
+
+***
+### Questions
+
+**Question 13** - are there any Ns in the generated consensus sequence at the start? why do you think that is?
+***
+
+**Question 14** - try copying and pasting the created consensus sequence into [NCBI Blast](https://blast.ncbi.nlm.nih.gov/Blast.cgi) - what is the closest sample on GenBank?
+***
+
+
+# 5: Variant calling
+
+Viruses, and in particular RNA viruses, can exist as complex populations consisting of numerous variants present at a spectrum of frequencies – the so called viral quasispecies. Although we have created a consensus sequence (which typically considers mutations at a frequency >50% in the sample) using iVar, we do not yet know anything about the mutations within the sample. Furthermore, it is often necessary to go beyond the consensus, and investigate the spectrum of low frequency mutations present in the sample.
+
+iVar itself could be used to call variants (using the [iVar variants](https://andersen-lab.github.io/ivar/html/manualpage.html) command). But here we will be using a slightly more advanced variant caller called [LoFreq](https://github.com/CSB5/lofreq) to call the low (and high) frequency variants present in the sample BAM file. LoFreq uses numerous statistical methods and tests to attempt to distinguish true low frequency viral variants from sequence errors. It requires a sample BAM file and corresponding reference sequence that it was aligned to, and creates a [VCF](https://samtools.github.io/hts-specs/VCFv4.2.pdf) file as an output.
+
+First, lets make sure we are in the correct folder to work on Sample1:
+
+```
+cd ~/RefAlign/Dengue
+```
+To use LoFreq enter this command:
+
+```
+lofreq call -f deng3.fasta -o deng3.vcf deng3.bam
+```
+
+Breaking this command down:
+
+* **/lofreq**: the name of the program we are using
+* **call**: the name of the function within LoFreq we are using – call variants
+* **-f**: deng3.fasta: the reference file name and location (path)
+* **-o deng3.vcf**: the output VCF file name to create
+* **deng3**.bam: the input BAM file name
+
+Now lets open the VCF file created by LoFreq:
+
+```
+more deng3.vcf
+```
+
+The outputted VCF file consists of the following fields:
+
+* CHROM: the chromosome – in this case the DENV3 sequence NC_001475.2 
+* POS: the position on the chromosome the variant is at
+* ID: a ‘.’ but LoFreq can be run with a database of known variants to annotate this field
+* REF: the reference base at this position
+* ALT: the alternate base (the mutated base) at this position
+* QUAL: LoFreq’s quality score for the variant
+* FILTER: whether it passed LoFreq’s filters e.g. PASS
+* INFO: Detailed Information
+	* DP=1248; depth = 1248
+	* AF=0.995192; Alt Frequency (Mutation Frequency) = 99.5192%
+	* SB=0; Strand Bias test p-value
+	* DP4=0,1,604,638: Coverage of the ref base in Fwd and Rev, and the alt base in Fwd and Rev
+
+***
+### Questions
+
+**Question 15** – how many consenus level (i.e AF > 0.5) are there in the sample? Are there any subconsenus mutations (i.e. AF < 0.5) 
+***
+
+LoFreq simply calls the reference position and mutation present, it does not characterise the effect of the mutation in terms of whether the mutation is synonymous or nonsynonymous etc. To do that we will use a program called [SnpEff](https://github.com/pcingola/SnpEff) which is run on LoFreq’s outputted VCF file and creates a new annotated VCF file.
+
+First we need to activate a conda environment snpeff is installed in:
+
+```
+conda activate snpeff
+```
+Then run snpeff on our vcf file to annotate it:
+
+```
+snpEff -ud 0 NC_001475.2 deng3.vcf > deng3_snpeff.vcf
+```
+
+Breaking this command down:
+
+* **snpEff**: the name of the program we are using
+* **-ud 0**: Set upstream downstream interval length to 0
+* **NC_001475.2**: the reference file name
+* **deng3.vcf**: the input vcf file name
+* **deng3_snpeff.vcf**: the annotated output vcf file name
+
+Setting -ud 0 stops SnpEff from characterising mutations located near (but not within) a gene as being located in their UTRs. Typically viral genomes are compact and genes are separated by few bases, in such cases a mutation in one gene could also be characterised as being in the UTR region of a neighbouring gene (as SnpEff was initially built for human analyses) – try running SnpEff without the -ud 0 and compare the results if you want, you should see multiple annotations for each mutation.
+
+Now we can view the annotated vcf file created by SnpEff:
+
+```
+more deng3_snpeff.vcf
+```
+
+The mutations will now have annotations added at the end of the Info field (the last field, the 8th field), e.g in Sample1 you should see this nonsynonymous (missense) mutation at genome position 644 which corresponds to a Leu to Val amino acid mutation at codon 184 (Leu184Val) in the polyprotein (POLY) on DENV3:
+
+```
+DO NOT ENTER THIS - IT IS AN EXAMPLE OF A MUTATION IN THE VCF!!!
+DP=2014;AF=0.990070;SB=9;DP4=1,6,996,998;ANN=G|missense_variant|MODERATE|POLY|DV3_gp1|transcript|DV3_gp1|protein_coding|1/1|c.550C>G|p.Leu184Va
+l|550/10173|550/10173|184/3390||
+
+```
+
+The C to G mutation at genome position 644 corresponds to position 550 (out of 10173) within the polyprotein (POLY) gene which corresponds to codon 184 (out of 3390) within POLY.
+
+**NB:** SnpEff includes many pre-built databases – for many viruses you may need to build the SnpEff database first by downloading and processing a GenBank file, see the documentation [here](https://pcingola.github.io/SnpEff/)
+
+
+# 8: Group practical
+
+TBA
  
 
 
