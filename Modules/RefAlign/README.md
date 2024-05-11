@@ -35,7 +35,9 @@ This practical is associated with a VirtualBox image containing the tools and da
 	+ [5.2: Summary Statistics with weeSAM](#52-summary-statistics-with-weeSAM)
 	+ [5.3: Coverage plot on your own](#53-coverage-plot-on-your-own)
 	+ [5.4: Visualisation with Tablet](#54-visualisation-with-tablet)
- 
+* [6: Consensus sequence generation](#6-consensus-sequence-generation)
+* [7: Variant calling](#7-variant-calling)
+* [8: Group practical](#8-group-practical)
 
 # 1: Setup
 
@@ -46,10 +48,6 @@ To start off, we will need to move into the correct folder:
 ```
 cd ~/RefAlign/Dengue
 ```
-
-***Command breakdown:***
-
-* **cd** = change directory 
 
 Next, list the contents of the directory so you can see the files we will be working with:
 
@@ -331,6 +329,7 @@ There are two subfolders in this directory: mystery and mystery2
 
 These are mystery samples, combine all the given references sequences in the **refs** subfolder into one file using the “cat” command, align the reads to that combined reference and then determine what the virus in each sample is.
  
+***
 # 5: Assembly Visualisation and Statistics Practical
 
 In this practical, we will be checking our reference assembly from the previous session. We will use tools to generate summary statistics of the depth and breadth of the coverage across the genome, coverage plots, and visualisation of our assembly using tools such as Tablet and weeSAM. Later sessions of the course will cover how to call the consensus sequence and variants.
@@ -423,11 +422,11 @@ You should see something like this:
 
 Now let’s view the coverage plot by clicking on the hyperlink (blue and underlined) in the Ref_Name column, you should see a coverage plot similar to this:
 
-![](https://github.com/WCSCourses/ViralBioinfAsia2024/blob/main/Modules/RefAlign/v2024_denv3_cov.png)
+![](https://github.com/WCSCourses/ViralBioinfAsia2024/blob/main/Modules/RefAlign/v2024_denv1_cov2.png)
 
 The x-axis represents the genome position, whilst the y-axis represents the Depth of Coverage at each genome position. 
 
-**NB:** Although our reference file is called deng3.fasta, the actual sequence itself inside the file is called DengueVirus3\_NC\_004175.2 (you can check for yourself if you want to: head –n1 deng3.fasta)
+**NB:** Although our reference file is called deng1.fasta, the actual sequence itself inside the file is called DengueVirus1\_NC\_004177.1 (you can check for yourself if you want to: head –n1 deng1.fasta)
 
 Although you do expect variation in coverage across the genome, the numerous regions of near zero coverage suggest that the DENV1 reference is not ideal, and the aligner has struggled to effectively map reads onto it in this regions – presumably because the reference is too divergent from the viral population in the sample at these regions. 
 
@@ -471,19 +470,17 @@ You should see the Tablet graphical user interface:
 
 **NB:** Sometimes a small popup window also appears, giving information on how to correctly cite Tablet, with a brief countdown timer.
 
-We want to load in our read alignment from the DENV1 genome. So **Click** on the **Open Assembly** button on the top menu bar.
+We want to load in our read alignment from the DENV3 genome. So **Click** on the **Open Assembly** button on the top menu bar.
 
 ![](https://github.com/WCSCourses/ViralBioinfAsia2024/blob/main/Modules/RefAlign/Tablet2.png)
 
-This will launch the Open Assembly window, **Click** **Browse** and then **navigate** to your **~/RefAlign/Dengue** folder and **Select** the **denv.bam** file for **Primary Assembly**. Afterward, **Click** **Browse** and **select** the **deng3.fasta** file for **Reference/Consensus File**, before **Clicking** **Open**.
+This will launch the Open Assembly window, **Click** **Browse** and then **navigate** to your **~/RefAlign/Dengue** folder and **Select** the **denv3.bam** file for **Primary Assembly**. Afterward, **Click** **Browse** and **select** the **deng3.fasta** file for **Reference/Consensus File**, before **Clicking** **Open**.
 
 ![](https://github.com/WCSCourses/ViralBioinfAsia2024/blob/main/Modules/RefAlign/v2024_tablet_select.png)
 
-After loading you should see the message **-select a contig to begin visualisation-** along with a list of contigs in the left hand panel. In our analysis, we have used a single sequence (the DENV3 reference sequence), so our contig list only has one entry (the contig DengueVirus3\_NC\_004175.2), **click** on this entry.
+After loading you should see the message **-select a contig to begin visualisation-** along with a list of contigs in the left hand panel. In our analysis, we have used a single sequence (the DENV3 reference sequence), so our contig list only has one entry (the contig NC\_004175.2), **click** on this entry.
 
 ![](https://github.com/WCSCourses/ViralBioinfAsia2024/blob/main/Modules/RefAlign/Tablet4.png)
-
-**NB:** Although our reference file is called deng3.fasta, the actual sequence itself inside the file is called DengueVirus3\_NC\_004175.2 (you can check for yourself if you want to: head –n1 deng3.fasta)
 
 **NB:** We only have one contig as our reference sequence only consisted of one sequence (the DENV3 genome). However, you can align reads to a reference containing multiple sequences, such as the human genome consisting of multiple separate chromosome sequences, or a segmented virus such as influenza consisting of multiple separate segment sequences, or all of the contigs generated from a metagenomics data set. 
 
@@ -598,7 +595,7 @@ more denv3_consensus.fa
 ***
 
 
-# 5: Variant calling
+# 7: Variant calling
 
 Viruses, and in particular RNA viruses, can exist as complex populations consisting of numerous variants present at a spectrum of frequencies – the so called viral quasispecies. Although we have created a consensus sequence (which typically considers mutations at a frequency >50% in the sample) using iVar, we do not yet know anything about the mutations within the sample. Furthermore, it is often necessary to go beyond the consensus, and investigate the spectrum of low frequency mutations present in the sample.
 
@@ -619,7 +616,7 @@ Breaking this command down:
 
 * **/lofreq**: the name of the program we are using
 * **call**: the name of the function within LoFreq we are using – call variants
-* **-f**: deng3.fasta: the reference file name and location (path)
+* **-f deng3.fasta**: the reference file name and location (path)
 * **-o deng3.vcf**: the output VCF file name to create
 * **deng3**.bam: the input BAM file name
 
