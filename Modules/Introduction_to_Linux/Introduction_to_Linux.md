@@ -88,7 +88,7 @@ When you open a terminal in Linux, you will see a command prompt, ready to take 
 Copy the command below and paste it into your command line to copy the contents of the directory Linux to your home directory.
 
 ```bash
-cp -R ../Linux_data .
+cp -R course_data/Linux_data .
 ```
 
 All Linux commands are single words (can be alpha-numeric), with optional parameters followed by arguments. For historical reasons, some of the early commands are only two letter long and case sensitive. Most of the command options (also called flags) are single letters. They should be specified after the command before giving any input. 
@@ -473,21 +473,21 @@ This command kills the job with the process id 1234. As a user you can kill only
 
 1. Open a new terminal and navigate into Exercises directory.
 2. Extract first 100 lines of the fasta sequence from the file “NC_048217.1_cds_YP_009824978.1_1.fa” and save the output into a new file “output.fa”
-3. How many fasta files are there in the directory?
-4. Extract all header lines from the file "Betacoronaviruses.fa".
-5. How many sequences are there in the file "Betacoronaviruses.fa"?
-6. Copy the file "outbreak.csv" file from the "Linux_data" directory into "Exercises" directory.
-7. Get the list of countries that had at least two outbreaks in 2024.
-8. Find the 99th line of the file "NC_039207.1_cds_YP_009513009.1_2.fa" using only the 'tail' and 'head' command.
-9. In the file "NC_039207.1_cds_YP_009513008.1_1.fa", count the number of lines containing the sub-sequence "GGGG".
+3. How many fasta files are there in the “Exercises” directory?
+4. Extract all fasta header lines from the file “Betacoronaviruses.fa”.
+5. How many fasta sequences are present in the file “Betacoronaviruses.fa”?
+6. Copy the file “outbreak.csv” file from the “Linux_data” directory into “Exercises” directory.
+7. From the file “outbreak.csv”, get the list of countries that had at least two outbreaks in 2024.
+8. Find the 99th line of the file “NC_039207.1_cds_YP_009513009.1_2.fa” using only the ‘tail’ and ‘head’ command.
+9. In the file “NC_039207.1_cds_YP_009513008.1_1.fa”, count the number of lines containing the sub-sequence “GGGG”.
 10. How do you stop a process with pid 5678?
 11. Re-execute your previous command using a keyboard shortcut.
 12. Create a new directory named ‘Trial’ and move all files whose names begin with ‘NC_009021.1_cds_YP’ into the ‘Trial’ directory.
 13. Which is the command used to remove or delete a file without a confirmation prompt?
 14. __________ command is used to count the total number of lines, words and character in a file.
 15. From the headers of all the fasta files (except the Betacoronaviruses.fa) present in the Exercises directory, extract fields 2 to 7 using the space delimiter.
-16. Extract first 10 lines of "outbreak.csv", sort them and save as "outbreak_1.csv". Extract first 20 lines of outbreak.csv, sort them and save as "outbreak_2.csv".
-17. Extract common lines between the files "outbreak_1.csv" and "outbreak_2.csv" (use “comm” command, type "man comm" to get information) and save the output into a file named "output_1".
+16. Extract first 10 lines of “outbreak.csv”, sort them and save as “outbreak_1.csv”. Extract first 20 lines of outbreak.csv, sort them and save as “outbreak_2.csv”.
+17. Extract common lines between the files “outbreak_1.csv” and “outbreak_2.csv” (use “comm” command, type “man comm” to get information) and save the output into a file named “output_1”.
 18. Which command would you use to find the word “pattern” from the file, “filename.txt”? Using that command, extract the “BioProject” information from the file SARS-CoV-2.gb.
-19. Use the file SARS-CoV-2.gb to extract protein identifiers ("protein_id"). Remove the pattern "protein_id" from the output.
-20. Which option with the command "rm" is required to remove a directory? 
+19. Use the file SARS-CoV-2.gb to extract protein identifiers (“protein_id”). Remove the pattern “protein_id” from the output.
+20. Which option with the command “rm” is required to remove a directory?
