@@ -477,7 +477,7 @@ We want to load in our read alignment from the DENV1 genome. So **Click** on the
 
 This will launch the Open Assembly window, **Click** **Browse** and then **navigate** to your **~/RefAlign/Dengue** folder and **Select** the **denv.bam** file for **Primary Assembly**. Afterward, **Click** **Browse** and **select** the **deng3.fasta** file for **Reference/Consensus File**, before **Clicking** **Open**.
 
-![](https://github.com/WCSCourses/GCV23/blob/main/modules/ReferenceAlignment/Tablet3.png)
+![](https://github.com/WCSCourses/GCV23/blob/main/modules/ReferenceAlignment/v2024_tablet_select.png)
 
 After loading you should see the message **-select a contig to begin visualisation-** along with a list of contigs in the left hand panel. In our analysis, we have used a single sequence (the DENV3 reference sequence), so our contig list only has one entry (the contig DengueVirus3\_NC\_004175.2), **click** on this entry.
 
