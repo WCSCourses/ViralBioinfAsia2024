@@ -21,7 +21,6 @@ E-mail: Richard.Orton@glasgow.ac.uk
 
 This practical is associated with a VirtualBox image containing the tools and data sets pre-installed, and an associated lecture on Reference Alignment of High-Throughoput Sequencing (HTS) reads to a reference a sequence, and subsequent variant and consensus calling.
 
-* [0: Overview](#0-overview)
 * [1: Setup](#1-setup)
 	+ [1.1: Basic read statistics](#11-basic-read-statistics)
 * [2: Read Alignment](#2-read-alignment)
@@ -435,7 +434,7 @@ Although you do expect variation in coverage across the genome, the numerous reg
 **Close the weeSAM and Firefox windows before proceeding!**
 
 ### Common issue
-A common issue here is due to the fact that we have launched firefox from the terminal (wihtout running it background - see advanced linux commands). In order to get our command prompt back (the manager@GCV2023) we need to close the firefox window down, the prompt should then return.
+A common issue here is due to the fact that we have launched firefox from the terminal (wihtout running it background - see advanced linux commands). In order to get our command prompt back (the **manager@ViralGenomics24**) we need to close the firefox window down, the prompt should then return.
 
 ## 5.3: Coverage plot on your own
 
