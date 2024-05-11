@@ -467,21 +467,21 @@ tablet
 
 You should see the Tablet graphical user interface:
 
-![](https://github.com/WCSCourses/GCV23/blob/main/modules/ReferenceAlignment/Tablet.png)
+![](https://github.com/WCSCourses/ViralBioinfAsia2024/blob/main/Modules/RefAlign/Tablet.png)
 
 **NB:** Sometimes a small popup window also appears, giving information on how to correctly cite Tablet, with a brief countdown timer.
 
 We want to load in our read alignment from the DENV1 genome. So **Click** on the **Open Assembly** button on the top menu bar.
 
-![](https://github.com/WCSCourses/GCV23/blob/main/modules/ReferenceAlignment/Tablet2.png)
+![](https://github.com/WCSCourses/ViralBioinfAsia2024/blob/main/Modules/RefAlign/Tablet2.png)
 
 This will launch the Open Assembly window, **Click** **Browse** and then **navigate** to your **~/RefAlign/Dengue** folder and **Select** the **denv.bam** file for **Primary Assembly**. Afterward, **Click** **Browse** and **select** the **deng3.fasta** file for **Reference/Consensus File**, before **Clicking** **Open**.
 
-![](https://github.com/WCSCourses/GCV23/blob/main/modules/ReferenceAlignment/v2024_tablet_select.png)
+![](https://github.com/WCSCourses/ViralBioinfAsia2024/blob/main/Modules/RefAlign/v2024_tablet_select.png)
 
 After loading you should see the message **-select a contig to begin visualisation-** along with a list of contigs in the left hand panel. In our analysis, we have used a single sequence (the DENV3 reference sequence), so our contig list only has one entry (the contig DengueVirus3\_NC\_004175.2), **click** on this entry.
 
-![](https://github.com/WCSCourses/GCV23/blob/main/modules/ReferenceAlignment/Tablet4.png)
+![](https://github.com/WCSCourses/ViralBioinfAsia2024/blob/main/Modules/RefAlign/Tablet4.png)
 
 **NB:** Although our reference file is called deng3.fasta, the actual sequence itself inside the file is called DengueVirus3\_NC\_004175.2 (you can check for yourself if you want to: head –n1 deng3.fasta)
 
@@ -489,7 +489,7 @@ After loading you should see the message **-select a contig to begin visualisati
 
 Tablet should now load the entire BAM file for visualisation. You can use the **scrollbars** to move across the genome and view all the reads aligned against the reference.
 
-![](https://github.com/WCSCourses/GCV23/blob/main/modules/ReferenceAlignment/Tablet5.png)
+![](https://github.com/WCSCourses/ViralBioinfAsia2024/blob/main/Modules/RefAlign/Table5.png)
 
 ### Read Display
 In the read display, As, Cs, GS and Ts are represented with different colour blocks, Variants are highlighted with Red Text and a different shading, Deletions are represented with Red Asterisks, whilst the location of Insertions is highlighted with red boxes.
@@ -501,7 +501,7 @@ You can easily jump about the BAM alignment by **clicking** within the **Coverag
 ### Variants
 One of the (many) useful features of Tablet is the ability to highlight variants. **Slide** the **Variants Slider** all the way to the right hand side to highlight variants. If you now scroll along the genome, you should be able to easily spot consensus level mutations (as virtually every read at a position will have a mutation) and also spot minority variants.
 
-![](https://github.com/WCSCourses/GCV23/blob/main/modules/ReferenceAlignment/Tablet6.png)
+![](https://github.com/WCSCourses/ViralBioinfAsia2024/blob/main/Modules/RefAlign/v2024_tablet_mutations.png)
 
 **NB:** Minority variants could be real viral mutations from the viral population or be errors introduced by RT-PCR or the sequencer itself.
 
