@@ -614,7 +614,7 @@ lofreq call -f deng3.fasta -o denv3.vcf denv3.bam
 
 Breaking this command down:
 
-* **/lofreq**: the name of the program we are using
+* **lofreq**: the name of the program we are using
 * **call**: the name of the function within LoFreq we are using – call variants
 * **-f deng3.fasta**: the reference file name and location (path)
 * **-o deng3.vcf**: the output VCF file name to create
@@ -692,9 +692,36 @@ The C to G mutation at genome position 644 corresponds to position 550 (out of 1
 
 # 8: Group practical
 
-TBA
- 
+For the group practical, we want you to work in groups on a single computer and analyse one (or both) of the below dengue virus samples. Tasks:
 
+* Align the reads to the designated reference sequence using bwa
+* Convert the SAM to BAM etc
+* Count the number of mapped and unmapped reads
+* Create a coverage plot
+* What is the average depth and breadth of the sample
+* Create a consensus sequences with ivar - BLAST it on GenBank - what is the closest sequence?
+* Use LoFreq to call mutations and create a vcf file
+* Use snpEff to characterise the mutations - find one synonymous and one non-synonymous mutation
+
+
+**Dengue-S**
+Virus: Dengue virus - serotype 2
+Country: Seychelles
+Location: ~/RefAlign/Dengue-S
+Reference file: dengue_refseq.fasta
+FASTQ files: SRR10230796_1.fastq  and SRR10230796_2.fastq
+Paper Title: [Complete Genome Sequences of Dengue Virus Type 2 Epidemic Strains from Reunion Island and the Seychelles](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6979306/)
+
+**Dengue-B**
+Virus: Dengue virus - serotype 2
+Country: Bangladesh
+Location: ~/RefAlign/Dengue-B
+Reference file: dengue_refseq.fasta
+FASTQ files: SRR12901070_1.fastq  and SRR12901070_2.fastq
+Paper Title: [Genome Sequence of a Dengue Virus Serotype 2 Strain Identified during the 2019 Outbreak in Bangladesh](https://journals.asm.org/doi/10.1128/mra.01246-20)
+
+
+One Friday, we can try and write a bash script to process thee automatically.
 
 
 
