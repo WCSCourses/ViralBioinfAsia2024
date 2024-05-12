@@ -2,10 +2,10 @@
 
 ## Course Details
 
-* [Viral Genomics and Bioinformatics - Asia]([https://coursesandconferences.wellcomeconnectingscience.org/event/genomics-and-clinical-virology-20230611/](https://coursesandconferences.wellcomeconnectingscience.org/event/viral-genomics-and-bioinformatics-asia-20240512/))
+* [Viral Genomics and Bioinformatics - Asia](https://coursesandconferences.wellcomeconnectingscience.org/event/viral-genomics-and-bioinformatics-asia-20240512/)
 * 12th-17th June 2024
 * OUCRU, Vietnam
-* [https://github.com/WCSCourses/ViralBioinfAsia2024 ](https://github.com/WCSCourses/ViralBioinfAsia2024 )
+* [https://github.com/WCSCourses/ViralBioinfAsia2024 ](https://github.com/WCSCourses/ViralBioinfAsia2024)
 
 ## Contact Details
 
