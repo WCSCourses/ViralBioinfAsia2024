@@ -27,8 +27,8 @@ This practical is associated with a VirtualBox image containing the tools and da
 * [1: Kmer based metagenomics with Kraken2](#1-kmer-based-metagenomics-with-kraken2) 
 * [2: Run kraken2](#2-run-kraken2)
 * [3: Kraken2 on your own](#3-kraken2-on-your-own)
-* [4:Contig metagenomics with diamond](4-contig-metagenomics-with-diamond)
-* [5:Diamond on your own](5-diamond-on-your-own)
+* [4:Contig metagenomics with diamond](#4-contig-metagenomics-with-diamond)
+* [5:Diamond on your own](#5-diamond-on-your-own)
 
 # 1: Kmer based metagenomics with Kraken2
 
@@ -206,7 +206,7 @@ ktImportBLAST contigs_diamond.txt -o contigs_diamond.html -tax ~/Diamond/
 firefox contigs_diamond.html
 ```
 
-# 5:Diamond on your own
+# 5: Diamond on your own
 
 ```
 cd ~/Metagenomics/VIZIONS
