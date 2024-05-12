@@ -609,7 +609,7 @@ cd ~/RefAlign/Dengue
 To use LoFreq enter this command:
 
 ```
-lofreq call -f deng3.fasta -o deng3.vcf deng3.bam
+lofreq call -f deng3.fasta -o denv3.vcf denv3.bam
 ```
 
 Breaking this command down:
@@ -623,7 +623,7 @@ Breaking this command down:
 Now lets open the VCF file created by LoFreq:
 
 ```
-more deng3.vcf
+more denv3.vcf
 ```
 
 The outputted VCF file consists of the following fields:
@@ -657,7 +657,7 @@ conda activate snpeff
 Then run snpeff on our vcf file to annotate it:
 
 ```
-snpEff -ud 0 NC_001475.2 deng3.vcf > deng3_snpeff.vcf
+snpEff -ud 0 NC_001475.2 denv3.vcf > denv3_snpeff.vcf
 ```
 
 Breaking this command down:
@@ -673,7 +673,7 @@ Setting -ud 0 stops SnpEff from characterising mutations located near (but not w
 Now we can view the annotated vcf file created by SnpEff:
 
 ```
-more deng3_snpeff.vcf
+more denv3_snpeff.vcf
 ```
 
 The mutations will now have annotations added at the end of the Info field (the last field, the 8th field), e.g in Sample1 you should see this nonsynonymous (missense) mutation at genome position 644 which corresponds to a Leu to Val amino acid mutation at codon 184 (Leu184Val) in the polyprotein (POLY) on DENV3:
