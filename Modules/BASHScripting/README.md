@@ -1,8 +1,16 @@
 # Introduction to shell (bash) scripting
 
-## Sreenu Vattipally
-### MRC-University of Glasgow Centre for Virus Research
-### University of Glasgow, G61 3RX
+## [Sreenu Vattipally](https://www.gla.ac.uk/schools/infectionimmunity/staff/sreenuvattipally/)
+* MRC-University of Glasgow Centre for Virus Research
+* University of Glasgow, G61 1QH
+* E-mail: Sreenu.Vattipally@glasgow.ac.uk
+
+## Course information 
+
+* [Viral Genomics and Bioinformatics - Asia](https://coursesandconferences.wellcomeconnectingscience.org/event/viral-genomics-and-bioinformatics-asia-20240512/)
+* 12th-17th May 2024
+* OUCRU, Vietnam
+
 
 ---
 
