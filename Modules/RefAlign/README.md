@@ -731,21 +731,20 @@ For the group practical, we want you to work in groups on a single computer and 
 
 
 **Dengue-S**
-Virus: Dengue virus - serotype 2
-Country: Seychelles
-Location: ~/RefAlign/Dengue-S
-Reference file: dengue_refseq.fasta
-FASTQ files: SRR10230796_1.fastq  and SRR10230796_2.fastq
-Paper Title: [Complete Genome Sequences of Dengue Virus Type 2 Epidemic Strains from Reunion Island and the Seychelles](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6979306/)
+* Virus: Dengue virus - serotype 2
+* Country: Seychelles
+* Location: ~/RefAlign/Dengue-S
+* Reference file: dengue_refseq.fasta
+* FASTQ files: SRR10230796_1.fastq  and SRR10230796_2.fastq
+* Paper Title: [Complete Genome Sequences of Dengue Virus Type 2 Epidemic Strains from Reunion Island and the Seychelles](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6979306/)
 
 **Dengue-B**
-Virus: Dengue virus - serotype 2
-Country: Bangladesh
-Location: ~/RefAlign/Dengue-B
-Reference file: dengue_refseq.fasta
-FASTQ files: SRR12901070_1.fastq  and SRR12901070_2.fastq
-Paper Title: [Genome Sequence of a Dengue Virus Serotype 2 Strain Identified during the 2019 Outbreak in Bangladesh](https://journals.asm.org/doi/10.1128/mra.01246-20)
-
+* Virus: Dengue virus - serotype 2
+* Country: Bangladesh
+* Location: ~/RefAlign/Dengue-B
+* Reference file: dengue_refseq.fasta
+* FASTQ files: SRR12901070_1.fastq  and SRR12901070_2.fastq
+* Paper Title: [Genome Sequence of a Dengue Virus Serotype 2 Strain Identified during the 2019 Outbreak in Bangladesh](https://journals.asm.org/doi/10.1128/mra.01246-20)
 
 One Friday, we can try and write a bash script to process thee automatically.
 
