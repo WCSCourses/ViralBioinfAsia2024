@@ -675,7 +675,7 @@ The outputted VCF file consists of the following fields:
 
 LoFreq simply calls the reference position and mutation present, it does not characterise the effect of the mutation in terms of whether the mutation is synonymous or nonsynonymous etc. To do that we will use a program called [SnpEff](https://github.com/pcingola/SnpEff) which is run on LoFreq’s outputted VCF file and creates a new annotated VCF file.
 
-First we need to activate a conda environment snpeff is installed in:
+First we need to activate a conda environment snpeff is installed in. Due to a conflict on the VM, snpEff was installed in its own special environment, to use it we need to activate it:
 
 ```
 conda activate snpeff
@@ -715,6 +715,11 @@ The C (4th column) to G (5th column) mutation at genome position 644 (2nd column
 
 **NB:** SnpEff includes many pre-built databases – for many viruses you may need to build the SnpEff database first by downloading and processing a GenBank file, see the documentation [here](https://pcingola.github.io/SnpEff/)
 
+When we are finished using snpEff we need to deactivate the conda environment:
+
+```
+conda deactivate
+```
 
 # 8: Group practical
 
