@@ -65,7 +65,7 @@ And also two FASTA reference sequence files:
 **deng1.fasta**  
 **deng3.fasta**
 
-We will be aligning the paired end reads to the two reference sequences in turn. The reference sequences represent the 1 and 3 serotypes of DENV, and we will use the alignment results to determine which serotype the sample contains, and to also highlight the importance of selecting an appropriate reference.
+We will be aligning the paired end reads to the two reference sequences in turn. The reference sequences represent serotypes 1 and 3 of DENV, and we will use the alignment results to determine which serotype the sample contains, and to also highlight the importance of selecting an appropriate reference.
  
 ## 1.1: Basic read statistics
 
@@ -121,6 +121,8 @@ stats_len2	stddev	0.00
 ```
 
 Paired read files should always have the same number of lines/reads (the ordering of the reads in each file is also critical), so if your two paired files have a different number of reads, something has gone wrong (e.g. filtering/trimming went wrong and corrupted the output, or maybe files from different samples are being used). 
+
+As we are using simulated reads they are very uniform (all the same length) and also very good quality. For this practical we are skipping read trimming and QC as the reads are such good quality and as read QC is covered in a separate practical. But, in normal circumstances you should always do QC on your reads!
  
 # 2: Read Alignment
 
@@ -283,30 +285,30 @@ You now need to use bwa to align the reads to the deng3.fasta reference sequence
 
 You need to work out the commands yourself based on the previous commands for the deng1.fasta reference. 
 
-Here is a reminder of the commands you used for DENV1 which you will need to adapt. 
-
 **NB:** Essentially, you will want to change the reference name in the bwa command, and all of the SAM/BAM filenames in the bwa and samtools commands from denv1 to denv3.
 
+Here is a reminder of the commands you used for DENV1 **which you will need to adapt**. 
+
 ```
-bwa index deng3.fasta
-```
-```
-bwa mem -t 4 deng3.fasta deng_sim_R1.fq deng_sim_R2.fq > denv3.sam
-```
-```
-samtools sort denv3.sam -o denv3.bam
+bwa index deng1.fasta
 ```
 ```
-samtools index denv3.bam
+bwa mem -t 4 deng1.fasta deng_sim_R1.fq deng_sim_R2.fq > denv1.sam
 ```
 ```
-rm denv3.sam
+samtools sort denv1.sam -o denv1.bam
 ```
 ```
-samtools view -c -f4 denv3.bam
+samtools index denv1.bam
 ```
 ```
-samtools view -c -F2308 denv3.bam
+rm denv1.sam
+```
+```
+samtools view -c -f4 denv1.bam
+```
+```
+samtools view -c -F2308 denv1.bam
 ```
 
 ***
@@ -327,7 +329,31 @@ If you are looking for something extra to do, there are additional data sets loc
 
 There are two subfolders in this directory: mystery and mystery2
 
-These are mystery samples, combine all the given references sequences in the **refs** subfolder into one file using the “cat” command, align the reads to that combined reference and then determine what the virus in each sample is.
+These are mystery samples, combine all the given references sequences in the **refs** subfolder into one file using the “cat” command, align the reads to that combined reference and then determine what the virus in each sample is - based on the number of reads mapping to each reference sequence. An easy command to use here is:
+
+```
+samtools idxtsats INPUT.bam
+```
+**NB:** you need to change the name INPUT to whatever your BAM file is actually called
+
+This will report the number of mapped read alignments (alignments not reads) and number of unmapped reads on each of the sequences in the reference file used for the alignment e.g:
+
+```
+Ref1	12345	0
+Ref2	654	12
+Ref3	2	0
+*	65276	0
+```
+
+idxstats represents unmapped reads in two forms. First reads where BOTH members of the pair are unapped are recorded on the last line where the Reference name is '*'. Secondly, reads that are unmapped but whose pair did map to a reference sequence are recorded in the 3rd column of the corresponding reference sequences. For example, in the example above, Ref2 had 654 reads that did map, and 12 reads that were techincally unmapped but those 12 reads each had their pair (from the paired end reads) map to the designated reference sequence.
+
+Another useful function of samtools (and there are lots) is the flagstat command:
+
+```
+samtools flagstat INPUT.bam
+```
+
+This will report the number of read alignments, number of primary, secondary and supplementary alignments and much more.
  
 ***
 # 5: Assembly Visualisation and Statistics Practical
@@ -680,12 +706,12 @@ The mutations will now have annotations added at the end of the Info field (the 
 
 ```
 DO NOT ENTER THIS - IT IS AN EXAMPLE OF A MUTATION IN THE VCF!!!
-DP=2014;AF=0.990070;SB=9;DP4=1,6,996,998;ANN=G|missense_variant|MODERATE|POLY|DV3_gp1|transcript|DV3_gp1|protein_coding|1/1|c.550C>G|p.Leu184Va
+NC_001475.2	644	.	C	G	34996.0	PASS DP=1012;AF=0.994071;SB=6;DP4=0,3,496,510;ANN=G|missense_variant|MODERATE|POLY|DV3_gp1|transcript|DV3_gp1|protein_coding|1/1|c.550C>G|p.Leu184Va
 l|550/10173|550/10173|184/3390||
 
 ```
 
-The C to G mutation at genome position 644 corresponds to position 550 (out of 10173) within the polyprotein (POLY) gene which corresponds to codon 184 (out of 3390) within POLY.
+The C (4th column) to G (5th column) mutation at genome position 644 (2nd column) corresponds to position 550 (out of 10173) within the polyprotein (POLY) gene which corresponds to codon 184 (out of 3390) within POLY.
 
 **NB:** SnpEff includes many pre-built databases – for many viruses you may need to build the SnpEff database first by downloading and processing a GenBank file, see the documentation [here](https://pcingola.github.io/SnpEff/)
 
@@ -722,6 +748,37 @@ Paper Title: [Genome Sequence of a Dengue Virus Serotype 2 Strain Identified dur
 
 
 One Friday, we can try and write a bash script to process thee automatically.
+
+# 9: Moving forward
+
+Typically when aligning to a good reference sequence, you are essentially just re-using the same commands again and again. Index the reference, align the reads to the reference, convert the SAM to BAM, index the BAM, count the number of reads, etc etc. This is where the power of BASH scripting and bioinformatics workflows comes into force. All you are doing is changing the names of the input and output files, the commands themselves are not changing.
+
+```
+bwa index REF.fasta
+```
+```
+bwa mem -t 4 REF.fasta Read1.fq Read2.fq > NAME.sam
+```
+```
+samtools sort NAME.sam -o NAME.bam
+```
+```
+samtools index NAME.bam
+```
+```
+rm NAME.sam
+```
+```
+samtools view -c -f4 NAME.bam
+```
+```
+samtools view -c -F2308 NAME.bam
+```
+
+One very good bioinformatics workflow for processing viral data is [ViralRecon](https://github.com/nf-core/viralrecon) which is written in nextflow. It is capable of automatically processing your FASTQ reads to cerate consensus sequences, you need to install nextflow and ViralRecon and then prepare input files specifying the input file names and locations.
+
+Another alternative is the Galaxy web servers for processing HTS data: e.g. [https://usegalaxy.eu](https://usegalaxy.eu)
+
 
 
 
