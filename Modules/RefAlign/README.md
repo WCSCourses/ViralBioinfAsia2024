@@ -336,7 +336,7 @@ samtools idxtsats INPUT.bam
 ```
 **NB:** you need to change the name INPUT to whatever your BAM file is actually called
 
-This will report the number of mapped read alignments (alignments not reads) and number of unmapped reads on each of the sequences in the reference file used for the alignment e.g:
+This will report the number of mapped read alignments (alignments not reads), the reference sequence length, and number of unmapped reads on each of the sequences in the reference file used for the alignment e.g:
 
 ```
 Ref1	12345	0
