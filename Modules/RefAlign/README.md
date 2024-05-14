@@ -332,7 +332,7 @@ There are two subfolders in this directory: mystery and mystery2
 These are mystery samples, combine all the given references sequences in the **refs** subfolder into one file using the “cat” command, align the reads to that combined reference and then determine what the virus in each sample is - based on the number of reads mapping to each reference sequence. An easy command to use here is:
 
 ```
-samtools idxtsats INPUT.bam
+samtools idxstats INPUT.bam
 ```
 **NB:** you need to change the name INPUT to whatever your BAM file is actually called
 
