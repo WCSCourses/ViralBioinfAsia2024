@@ -339,10 +339,10 @@ samtools idxtsats INPUT.bam
 This will report the number of mapped read alignments (alignments not reads), the reference sequence length, and number of unmapped reads on each of the sequences in the reference file used for the alignment e.g:
 
 ```
-Ref1	12345	0
-Ref2	654	12
-Ref3	2	0
-*	65276	0
+Ref1	Seqlen 12345	0
+Ref2	Seqlen 654	12
+Ref3	Seqlen 2	0
+*	Seqlen 65276	0
 ```
 
 idxstats represents unmapped reads in two forms. First reads where BOTH members of the pair are unapped are recorded on the last line where the Reference name is '*'. Secondly, reads that are unmapped but whose pair did map to a reference sequence are recorded in the 3rd column of the corresponding reference sequences. For example, in the example above, Ref2 had 654 reads that did map, and 12 reads that were techincally unmapped but those 12 reads each had their pair (from the paired end reads) map to the designated reference sequence.
