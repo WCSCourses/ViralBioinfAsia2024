@@ -23,8 +23,8 @@ E-mail: Richard.Orton@glasgow.ac.uk
 	+ [1.1: HCMV Nanopore on your own](#11-hcmv-nanopore-on-your-own)
 * [2: ARTIC Nanopore SARS-CoV-2 Reference Alignment](#2-artic-nanopore-sars-cov-2-reference-alignment)
  	+ [2.1: Setup and Data](#21-setup-and-data)
-	+ [2.2: ARTIC consensus sequence generation walkthrough](22-ARTIC-consensus-sequence-generation-walkthrough)
-	+ [2.3: Generating ARTIC consensus sequences yourself](23-generating-artic-consensus-sequences-yourself)
+	+ [2.2: ARTIC consensus sequence generation walkthrough](#22-artic-consensus-sequence-generation-walkthrough)
+	+ [2.3: Generating ARTIC consensus sequences yourself](#23-generating-artic-consensus-sequences-yourself)
 
 
 Previously in the course you would of learnt about the FASTQ format, what SAM and BAM files, and been aligning primarily illumina reads to reference sequences to call a consensus sequence. This session will build upon this, tweaking the steps to adapt them for handling nanopore reads, and also for handling the large number of overlapping amplicons used in the ARTIC protocols.
