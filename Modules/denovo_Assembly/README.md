@@ -1,3 +1,20 @@
+## De novo assembly practicals
+
+
+### [Sreenu Vattipally](https://www.gla.ac.uk/schools/infectionimmunity/staff/sreenuvattipally/)
+* MRC-University of Glasgow Centre for Virus Research
+* University of Glasgow, G61 1QH
+* E-mail: Sreenu.Vattipally@glasgow.ac.uk
+
+### Course information 
+
+* [Viral Genomics and Bioinformatics - Asia](https://coursesandconferences.wellcomeconnectingscience.org/event/viral-genomics-and-bioinformatics-asia-20240512/)
+* 12th-17th May 2024
+* OUCRU, Vietnam
+
+
+
+
 In the past decade, next-generation sequencing (NGS) has become an important tool for understanding viral evolution. It also has revolutionised many areas of biological research. NGS platforms can now generate large amounts of sequence data in a relatively short time, making them well-suited for studies of genomes, transcriptomes, and epigenetics.
 
 One of the important applications of NGS is whole-genome sequencing (WGS), which can be used to obtain the complete genome sequence of an organism. However, the primary challenge with WGS is that it is difficult to assemble the genome without a reference. 
