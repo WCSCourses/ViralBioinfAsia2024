@@ -31,7 +31,7 @@ In this practical, we will be using three different assemblers i.e. Spades, IDBA
 Create a directory for the analysis
 ```
 mkdir -p ~/DeNovo/SARS-CoV-2
-cd ~DeNovo/SARS-CoV-2/
+cd ~/DeNovo/SARS-CoV-2/
 ```
 
 Data for this practical (SRA ID: SRR21065613) are in your home directory's “Sreenu/FQs” folder. Move them to the current directory and uncompress them.
