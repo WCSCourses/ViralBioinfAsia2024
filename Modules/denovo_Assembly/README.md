@@ -158,6 +158,10 @@ cat Abyss*-unitigs.fa > Abyss-contigs.fa
 
 ```
 cd ~/DeNovo/SARS-CoV-2/Validate/
+
+mv ~/Sreenu/Ref/SRAS-CoV-2.fa ../Ref/.
+mv ~/Sreenu/Ref/SARS-CoV-2.gff ../Ref/.
+
 ```
 
 Let us check whether the contigs belong to SARS-CoV-2, if so where they map and what is the percentage of genome covered by them. For this we will be using the ”nucmer” program to compare the contigs to a reference genome.
