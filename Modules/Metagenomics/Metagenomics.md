@@ -317,13 +317,9 @@ Now you should attempt to do the metagenomics analyses of the other samples:
 
 You should try to do the spades de novo assembly, to make sure you learn how to enter/adapt the commands - if it takes too long each sample has a folder called Pre with a pre-assembled contigs.fasta file already in it:
 
-```
-~/Metagenomics/Vampire/Pre/contigs.fasta
-```
 
-```
-~/Metagenomics/VIZIONS/Pre/contigs.fasta
-```
+* ~/Metagenomics/Vampire/Pre/contigs.fasta
+* ~/Metagenomics/VIZIONS/Pre/contigs.fasta
 
 If you use the Pre contigs.fasta file you should run DIAMOND BLASTX and create a Krona plot on each, and answer the following questions:
 
