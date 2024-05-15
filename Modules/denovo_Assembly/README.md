@@ -160,7 +160,7 @@ cat Abyss*-unitigs.fa > Abyss-contigs.fa
 cd ~/DeNovo/SARS-CoV-2/Validate/
 
 mv ~/Sreenu/Ref/SARS-CoV-2.fa ../Ref/.
-mv ~/Sreenu/Ref/SARS-CoV-2.gff ../Ref/.
+mv ~/Sreenu/GFF/SARS-CoV-2.gff ../Ref/.
 
 ```
 
