@@ -321,9 +321,7 @@ You should try to do the spades de novo assembly, to make sure you learn how to 
 * ~/Metagenomics/Vampire/Pre/contigs.fasta
 * ~/Metagenomics/VIZIONS/Pre/contigs.fasta
 
-If you use the Pre contigs.fasta file you should run DIAMOND BLASTX and create a Krona plot on each, and answer the following questions:
-
-For each sample you should answer:
+You should run DIAMOND BLASTX and create a Krona plot on each, and for each sample you should answer:
 
 ***
 
