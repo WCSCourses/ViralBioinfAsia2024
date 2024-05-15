@@ -196,7 +196,8 @@ Bergner et al. 2018
 
 The VIZIOBS sample comes from this project:
 
-**Vietnam Initiative on Zoonotic Infections (VIZIONS)** 
+**Vietnam Initiative on Zoonotic Infections (VIZIONS)**  
+
 The VIZIONS data is from the, specifically this sample on the NCBI SRA - [ERR3179012](https://www.ncbi.nlm.nih.gov/sra/?term=ERR3179012) - and has this abstract:
 
 Focusing on both clinical and community based high-risk cohorts, this study will generate new insights into the diversity of human pathogens (especially viruses) and into the biological and behavioral processes involved in the emergence of novel pathogens.
@@ -258,9 +259,6 @@ Spades names contigs like this:
 
 ***
 
-```
-~/Metagenomics/Human/Pre/contigs.fasta
-```
 Although we now have contigs, and some long ones at that, we don't actually know anything about them. Are they viruses? If so which virus?
 
 To classify the contigs we will BLAST them. As viruses can be very diverse and can vary significantly at the nucleotide level, it is often beneficial to use BLASTx (nulecotide -> protein) rather than BLASTn (nucleotide -> nucleotide). We will use a tool called [DIAMOND](https://github.com/bbuchfink/diamond) which is a version of BLASTX that is considerably faster than standard BLASTX.
