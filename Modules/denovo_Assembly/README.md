@@ -210,7 +210,7 @@ cd ~/DeNovo/SARS-CoV-2/GapFilling
 Combine all the contigs into a file and run contigsMerger program.
 
 ```
-cat ../Abyss/*-contigs.fa ../Spades/contigs.fasta ../IDBA_UD/idba_ud/contig.fa > all_contigs.fa
+cat ../Abyss/*-contigs.fa ../Spades/contigs.fasta ../IDBA_UD/contig.fa > all_contigs.fa
 ```
 
 ```
