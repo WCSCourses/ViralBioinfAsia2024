@@ -27,17 +27,18 @@ This practical is associated with a VirtualBox image containing the tools and da
 * [1: Kmer based metagenomics with Kraken2](#1-kmer-based-metagenomics-with-kraken2) 
 * [2: Run kraken2](#2-run-kraken2)
 * [3: Kraken2 on your own](#3-kraken2-on-your-own)
-* [4:Contig metagenomics with diamond](#4-contig-metagenomics-with-diamond)
-* [5:Diamond on your own](#5-diamond-on-your-own)
+* [4: Contig metagenomics with diamond](#4-contig-metagenomics-with-diamond)
+* [5: Diamond on your own](#5-diamond-on-your-own)
 
 # 1: Kmer based metagenomics with Kraken2
 
-In this session, we will be working with two Illumina metagenomic data sets that have already been published and are available for download on the [NCBI Short Read Archive (SRA)](https://www.ncbi.nlm.nih.gov/sra), there are two samples:
+In this session, we will be working with three Illumina metagenomic data sets, two thave already been published, and all three are on the [NCBI Short Read Archive (SRA)](https://www.ncbi.nlm.nih.gov/sra). The samples are called:
 
-* Human: location = ~/Metagenomics/Human/
-* Vampire bat: ocation = ~/Metagenomics/Vampire/
+* **Human**: location = ~/Metagenomics/Human/
+* **Vampire** bat: location = ~/Metagenomics/Vampire/
+* **VIZIONS**: location = ~/Metagenomics/VIZIONS/
 
-We will be using a tool called [Kraken2](https://ccb.jhu.edu/software/kraken2/) to analyse the paired end FASTQ reads for each sample. Kraken2 is the newest version of Kraken, a taxonomic classification system using exact k-mer matches to achieve high accuracy and fast classification speeds. This classifier matches each k-mer within a query sequence (i.e. a read or contig) to the lowest common ancestor (LCA) of all genomes within the database containing the given k-mer.
+We will be using a tool called [Kraken2](https://ccb.jhu.edu/software/kraken2/) to analyse the paired end FASTQ reads for each sample. Kraken2 is the newest version of Kraken, a taxonomic classification system using exact k-mer matches to achieve high accuracy and fast classification speeds. This classifier matches each k-mer within a query sequence (i.e. a read or contig) to the lowest common ancestor (LCA) of all genomes within the database that contain the given k-mer.
 
 We will be broadly following the published Kraken metagenomic protocol:
 
@@ -47,7 +48,7 @@ Lu et al. (2022). Nature Protocols volume 17, pages 2815–2839
 
 Normally we would be using the "standard" kraken database - which can be downloaded from the [Kraken database download page](https://benlangmead.github.io/aws-indexes/k2). The standard database includes RefSeq archaea, bacteria, viruses, plasmid complete genomes, UniVec Core and the most recent human reference genome, GRCh38. 
 
-However, due to space (and computational power) constraints on the Virtual Machine we will be using the Viral RefSeq database, which is very small and fast, but as the dtaabase is built only using viral sequences it does come at a cost of false positives. In addition, kraken is nucleotide based, and the database typically only contains with genome sequence for each viral species, so may miss very divergent viruses.
+However, due to space (and computational power) constraints on the Virtual Machine we will be using the Viral RefSeq database, which is very small and fast, but as the database is built only using viral sequences it does come at a cost of false positives. In addition, kraken is nucleotide based, and the database typically only contains one genome sequence for each viral species, so may miss very divergent viruses where similarity is predomninatly at the amino acid rather than nucleotide level.
 
 To set things up, first change directory (cd) to directory where we will be working:
 
@@ -66,6 +67,11 @@ You should see the FASTQ paired-end read files which are gzipped (compressed):
 **SRR533978\_1.fq.gz**  
 **SRR533978\_2.fq.gz**
 
+The other set of reads are subsampled to make the de novo assembly finished in a short time:
+
+**SRR533978\_sub\_1.fq.gz**  
+**SRR533978\_sub\_2.fq.gz**
+
 # 2: Run kraken2
 
 
@@ -78,7 +84,7 @@ kraken2 --db ~/kraken2_database/ --threads 6 --minimum-hit-groups 3 --report-min
 1. **kraken2** = the name of the program we are executing
 2. **--db ~/kraken2_database/** = the location of the kraken2 database we are using 
 3. **--threads 6** = use 6 computer threads
-4.  **--report-minimizer-data** = forces Kraken 2 to provide unique k-mer counts per classification
+4. **--report-minimizer-data** = forces Kraken 2 to provide unique k-mer counts per classification
 5. **--minimum-hit-groups 3** = for increased classification precision (i.e., fewer false positives).
 6. **--paired SRR533978\_1.fastq.gz SRR533978\_2.fastq.gz** = the name of the paired input FASTQ files
 7. **--output kraken_output.txt** = the name of the kraken output file to create
@@ -86,7 +92,13 @@ kraken2 --db ~/kraken2_database/ --threads 6 --minimum-hit-groups 3 --report-min
 
 **NB:** The --minimum-hit-groups flag specifies the minimum number of ‘hit groups’ needed to make a classification call. Hit groups are overlapping k-mers sharing the same minimizer. Kraken 2 uses minimizers to compress the input genomic sequences, thereby reducing storage memory needed and run time. In this example, we increase the minimum number of hit groups from the default two groups to three groups for increased accuracy. See [Kraken2 manual](https://github.com/DerrickWood/kraken2/wiki/Manual)
 
-Overall, this command will output two files - our kraekn\_output.txt file and our kraken\_report.txt file. The kraken\_output.txt is large and not really human readable whereas the kraken_report.txt is a human readable summary that is tab-delimited, with one line per taxon. The fields of the output, from left-to-right, are as follows:
+Overall, this command will output two files - our kraekn\_output.txt file and our kraken\_report.txt file. The kraken\_output.txt is large and not really human readable whereas the kraken_report.txt is a human readable summary that is tab-delimited, with one line per taxon. 
+
+```
+more kraken_report.txt
+```
+
+The fields of the output, from left-to-right, are as follows:
 
 1. Percentage of reads covered by the clade rooted at this taxon
 2. Number of reads covered by the clade rooted at this taxon
@@ -97,7 +109,13 @@ Overall, this command will output two files - our kraekn\_output.txt file and ou
 7. NCBI taxonomy ID
 8. indented scientific name
 
-You can explore the report file manually using a command like **more**, esepcially if you understand the taxonomy. However, a more visual way of viewing the results is via a Krona plot:
+***
+
+**Question:** Examine the kraken_report.txt file - what viruses have the highest number of reads assigned to them?
+
+***
+
+You can explore the report file manually using a command like more. However, a more visual way of viewing the results is via a Krona plot:
 
 ```
 ktImportTaxonomy -q 2 -t 3 -s 4 kraken_output.txt -o kraken_krona.html -tax ~/Diamond/
@@ -110,9 +128,11 @@ ktImportTaxonomy -q 2 -t 3 -s 4 kraken_output.txt -o kraken_krona.html -tax ~/Di
 4. **-s 4** = column 4 of input files to use as score. 
 5. **kraken_output.txt** = the name of the input file - whcih is the kraken output file
 6. **-o kraken_krona.html** = the name of the Krona html file to create
-7. **-tax /db/kronatools/taxonomy** = the location of the NCBI taxonomy files for Krona
+7. **-tax /db/kronatools/taxonomy** = the location of the NCBI taxonomy files for Krona (already downloaded on the VM)
 
-This will create an new html output file which you should see in your directory:
+**WARNING - in order to make metagenomics manageable on the VM, we have only downloaded the Viral RefSeq taxonomy details, used the smaller Kraken database, and created a small Viral RefSeq Diamond database (see later) - therefore, the VM is a good place to practice but is not a good place to do a real analysis with your only data. That should be done with the full taxonomy and larger databases.**
+
+This will create a new html output file which you should see in your directory:
 
 ```
 ls
@@ -123,15 +143,16 @@ We can open this file with Firefox:
 ```
 firefox kraken_krona.html
 ```
+**NB:** see next section for exactly what a Krona plot is.
 
 ***
-### Questions
-**Question 1** – What viruses have the highest read counts in the sample?
+
+**Question** – What viruses have the highest number of reads assigned to them? i.e. in the krona plot which viruses have the largest slice of the pie chart?
+
 ***
 
-**NB:** Alternatively, the html file can be downloaded via the MobaXterm file browser on the left hand side of the window onto your local machine and opened there
 
-## 2.1 What is a krona plot?
+## 2.1: What is a krona plot?
 
 Krona is an interactive visualization tool for exploring the composition of metagenomes within a Web browser. A Krona plot is a html file that can be opened by a web browser (such as Firefox, Chrome, Safari and Internet Explorer/Edge). Krona uses multilevel pie charts to visualize both the most abundant organisms and their most specific classifications (Fig. 1). Rather than hiding lower ranks in its overview, Krona hides low-abundance organisms, which can be expanded interactively. 
 
@@ -164,14 +185,29 @@ The viral species is now called 'Tibrovirus congo': [https://www.ncbi.nlm.nih.go
 
 # 3: Kraken2 on your own
 
-If you have time, try processing the second sample the vampire bat and reusing and adapting the commands for the human sample - although there is no need to align the human genome first.
+Now, try processing the other samples - the vampire bat and VIZIONS data - and reusing and adapting the commands from the human sample.
 
-The sample is one sample from the following paper:
+The vampire bat sample is one of the samples from the following paper:
 
 **Using noninvasive metagenomics to characterize viral communities from wildlife**  
 Molecular Ecology Resources Volume19, Issue 1, January 2019, Pages 128-143  
 Bergner et al. 2018  
 [https://onlinelibrary.wiley.com/doi/full/10.1111/1755-0998.12946](https://onlinelibrary.wiley.com/doi/full/10.1111/1755-0998.12946)
+
+The VIZIOBS sample comes from this project:
+
+**Vietnam Initiative on Zoonotic Infections (VIZIONS)** 
+The VIZIONS data is from the, specifically this sample on the NCBI SRA - [ERR3179012](https://www.ncbi.nlm.nih.gov/sra/?term=ERR3179012) - and has this abstract:
+
+Focusing on both clinical and community based high-risk cohorts, this study will generate new insights into the diversity of human pathogens (especially viruses) and into the biological and behavioral processes involved in the emergence of novel pathogens.
+
+For each sample you should answer:
+
+***
+
+**Question** – What viruses have the highest number of reads assigned to them?
+
+***
 
 # 4: Contig metagenomics with diamond
 
@@ -181,40 +217,123 @@ First lets move into the correct folder:
 cd ~/Metagenomics/Human/
 ```
 
-If we have time we can run spades to de novo assemble the reads into large conrigs:
+We covered *de novo* assembly in the course yesterday. We will run spades (specifically metaspades for metagenomics) to de novo assemble the reads into larger contigs.
+
+As the sample is quite large, we will run spades on a sub-sample of the data - using the fastq reads with that include the word **sub**
 
 ```
-metaspades.py -1 SRR533978_1.fastq.gz -2 SRR533978_2.fastq.gz -t 6 -o ./spades
+metaspades.py -1 SRR533978_sub_1.fastq.gz -2 SRR533978_sub_2.fastq.gz -t 6 -o ./spades
+```
+After the command has started, it should take around 15-20 minutes to finish. You can either **kill the command** (Control + C) or open a new terminal window to view the pre-computed results in the Pre folder and let spades finish:
+
+```
+cd  ~/Metagenomics/Human/Pre/
 ```
 
-Otherwise we can use the contigs I already assembled when I ran spades before the course, located here:
+list the contents of the directory:
+
+```
+ls
+```
+
+The **contigs.fasta** file is the main output of spades. As spades outputs contigs in descending length order, we can see the length of the largest contigs by using grep:
+
+```
+grep ">" contigs.fasta | head
+
+```
+By now hopefully commands such as these make sense. We are searching for the > symbol in the file contigs.fasta - this will return all the sequence headers/names - we then pipe (|) that into the head command to just show the first 10 entries.
+
+Spades names contigs like this:
+
+\>NODE\_1\_length\_5876\_cov\_43.503977
+
+* NODE\_1 essentially means this is contig number 1
+* length\ _5876 means the contig is 6811 bases long
+* cov\43.503977 means the contig has an average coverage of KMERS [not reads] of 43.5
+
+***
+
+**Question** - what is the longest contig length?
+
+***
 
 ```
 ~/Metagenomics/Human/Pre/contigs.fasta
 ```
+Although we now have contigs, and some long ones at that, we don't actually know anything about them. Are they viruses? If so which virus?
 
-Now we run diamond blastx on the contigs, on a viral refseq database (for speed and limited resources):
+To classify the contigs we will BLAST them. As viruses can be very diverse and can vary significantly at the nucleotide level, it is often beneficial to use BLASTx (nulecotide -> protein) rather than BLASTn (nucleotide -> nucleotide). We will use a tool called [DIAMOND](https://github.com/bbuchfink/diamond) which is a version of BLASTX that is considerably faster than standard BLASTX.
+
+DIAMOND needs a protein database to query your sequecnes against. We have created a Viral RefSeq protein database already on the VM in ~/Diamond. Just to emphasise again, the VM is a good place to learn, but not somewhere to do real analyses. Normally, the BLAST database should atleast include all RefSeqs (eukaryotes, prokaryotes, viruses etc) to avoid mis-classifications. However, more complete results come from using the complete non-redundant (NR) protein database which is hundreds of GB in size.
+
+To run DIAMOND BLASTX on the contigs against the Viral RefSeq database:
 
 ```
 diamond blastx --threads 6 --outfmt 6 --db ~/Diamond/viral-refseq-prot --out contigs_diamond.txt -q contigs.fasta 
 ```
-Now we generate a krona plot of the results:
+* **diamond** - the program name  
+* **blastx** - tells diamond we want to do a blastx analysis  
+* **--threads 6** - use 6 computer threads
+* **-outfmt 6** - this means we want BLAST output format 6 - which is tabular
+* **--db ~/Diamond/viral-refseq-prot** - the name (and location) of the diamond database  
+* **--out contigs_diamond.txt** - the output file to create with the blastx results (hits)  
+* **-q contigs.fasta** - the file with our contigs to query the database
+
+Although we now have a DIAMOND BLASTX results file, the results aren't quite informative yet. If you to open up the results file:
+
+```
+head contigs_diamond.txt 
+```
+
+The first column is the contig/query name, whereas the second column is the sequecne it matches/hits to in the database. These hits are just GenBank accesion numbers. But we want to know the virus names.
+
+So we will again use Krona to classify the results, it is a slightly different command this time than previosuly with kraken, as the input data is slightly different (BLAST tabular Vs kraken's outputted file with taxonomy ID):
 
 ```
 ktImportBLAST contigs_diamond.txt -o contigs_diamond.html -tax ~/Diamond/
+```
+* **ktImportBLAST** - the program name  
+* **contigs_diamond.txt** - the DIAMOND BLASTX results file
+* **-o contigs_diamond.html** - the krona plot html file we want to create
+* **-tax ~/Diamond/** - the location of the NCBI taxonomy files   
 
+Now we can open our krona plot:
+
+```
 firefox contigs_diamond.html
 ```
 
+***
+
+**Question:** what viruses are present [you don't need to list them all, just a few]? what viruses have the most signficant BLAST hits [hint - colour by the Krona plot by eValue]?
+
+***
+
 # 5: Diamond on your own
 
-```
-cd ~/Metagenomics/VIZIONS
-```
+Now you should attempt to do the metagenomics analyses of the other samples:
 
-Pre assembled contigs here:
+* ~/Metagenomics/Vampire
+* ~/Metagenomics/VIZIONS
+
+You should try to do the spades de novo assembly, to make sure you learn how to enter/adapt the commands - if it takes too long each sample has a folder called Pre with a pre-assembled contigs.fasta file already in it:
+
+```
+~/Metagenomics/Vampire/Pre/contigs.fasta
+```
 
 ```
 ~/Metagenomics/VIZIONS/Pre/contigs.fasta
 ```
+
+If you use the Pre contigs.fasta file you should run DIAMOND BLASTX and create a Krona plot on each, and answer the following questions:
+
+For each sample you should answer:
+
+***
+
+**Question** – what viruses are present [you don't need to list them all, just a few]? what viruses have the most signficant BLAST hits?
+
+***
 
