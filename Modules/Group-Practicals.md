@@ -28,7 +28,7 @@
 	- Check whether the reads are Illumina/ONT and run the analysis accordingly
 
 
-## De novo aasembly 
+## De novo assembly 
 
 - De novo aasembly script
 	### Essential: 
