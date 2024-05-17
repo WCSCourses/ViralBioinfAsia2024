@@ -84,11 +84,11 @@
 
 - Phylogenetic script
 	### Essential: 
-	- Input: file.fa
+	- Input: file.fa (file.fas, file.fasta)
 
 	- Processing: 
 		- Run MSA with mafft
-		- Build a tree using iqtree2
+		- Build a tree using iqtree
     
 	- Output: MSA and tree
  
