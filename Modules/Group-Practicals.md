@@ -53,3 +53,29 @@
 	- Change the orientation if it is a reverse complement
 	- Take program-specific parameters from the user
 	- Use different de novo assemblers and combine the contigs to generate a super-contig
+
+
+## Metagenomics 
+
+- Metagenomics script
+	### Essential: 
+	- Input: file_1.fq (file_2.fq), kraken db location, output name
+
+	- Processing: 
+		- Clean the reads
+		- Run kraken
+    
+	- Output: Kraken report
+ 
+	  
+	### Desired: 
+	- Extract all the species and their mapped read count
+	- Generate a Krona plot
+
+
+	### Advanced:
+	- Give the help message
+	- Run different de novo assemblers and generate contigs
+	- Run Diamond and get the results
+	- Generate Krona plot report with the de novo contigs
+
