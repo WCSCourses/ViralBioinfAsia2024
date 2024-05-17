@@ -79,3 +79,19 @@
 	- Run Diamond and get the results
 	- Generate Krona plot report with the de novo contigs
 
+
+## Phylogenetics 
+
+- Phylogenetic script
+	### Essential: 
+	- Input: file.fa
+
+	- Processing: 
+		- Run MSA with mafft
+		- Build a tree using iqtree2
+    
+	- Output: MSA and tree
+ 
+	### Desired:
+	- Give the help message
+	- Give users options to run different alignment and tree-building programs
