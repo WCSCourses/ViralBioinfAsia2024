@@ -30,7 +30,7 @@
 
 ## De novo assembly 
 
-- De novo aasembly script
+- De novo assembly script
 	### Essential: 
 	- Input: file_1.fq (file_2.fq), output name
 
