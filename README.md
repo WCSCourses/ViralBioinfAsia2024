@@ -26,11 +26,6 @@ The Viral Genomics and Bioinformatics course will teach participants how to anal
 - [Sanket Limaye](https://www.linkedin.com/in/sanket-limaye-2551b6105/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app), Savitribai Phule Pune University, India
 - [Jonathan Chan](https://www.linkedin.com/in/jonathan-chan-669129120/), University of Malaysia, Sarawak, Malaysia
 
-Shield: [![CC BY 4.0][cc-by-shield]][cc-by]
-
-This work is licensed under a
-[Creative Commons Attribution 4.0 International License][cc-by].
-
-[cc-by]: http://creativecommons.org/licenses/by/4.0/
-[cc-by-image]: https://i.creativecommons.org/l/by/4.0/88x31.png
-[cc-by-shield]: https://img.shields.io/badge/License-CC%20BY%204.0-lightgrey.svg
+******
+## License
+<a rel="license" href="http://creativecommons.org/licenses/by/4.0/"><img alt="Creative Commons Licence" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a>.
