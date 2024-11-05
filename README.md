@@ -1,6 +1,11 @@
-# <img src="https://coursesandconferences.wellcomeconnectingscience.org/wp-content/themes/wcc_courses_and_conferences/dist/assets/svg/logo.svg" width="200" height="200">
+<img src="https://coursesandconferences.wellcomeconnectingscience.org/wp-content/themes/wcc_courses_and_conferences/dist/assets/svg/logo.svg" width="300" height="50"> 
 
-# Viral Genomics and Bioinformatics Asia 2024: 12 to 17 May 2024
+# Viral Genomics and Bioinformatics Asia 2024
+
+### 12 to 17 May 2024, OUCRU, Vietnam
+
+[Wellcome Connecting Science Course website](https://coursesandconferences.wellcomeconnectingscience.org/event/viral-genomics-and-bioinformatics-asia-20240512/)
+
 Hands-on training in viral genome sequence analysis and interpretation of large-scale sequencing genomics data
 
 ## Course overview
@@ -10,8 +15,6 @@ Viruses contribute to a significant public health burden globally. In Asia, vira
 Technological advances in science and research are making it possible for rapid detection, surveillance and management of viral diseases and outbreaks. In recent years, next-generation sequencing (NGS) technologies have played an important role in the identification and classification of viruses, in the detection of drug-resistance mutations and the treatment and surveillance of viral diseases. Early identification of a virus and rapid characterisation of its genome will aid towards better treatment and help in controlling the disease spread. Along with the advances in sequencing technologies, it is necessary to develop data management methods, computational analysis tools and human expertise to cope with the sequence deluge. The number of researchers able to interpret NGS sequence data is currently limited.   
 
 The Viral Genomics and Bioinformatics course will teach participants how to analyse viral genome sequences and interpret genomic data obtained by high-throughput sequencing. The use of the command line to analyse viral NGS data, quality control of sequences, reference mapping and de novo assembly of viral genomes, pathogen identification from metagenomics data, and creating phylogenetic trees will be covered in the course.
-
-[Course website](https://coursesandconferences.wellcomeconnectingscience.org/event/viral-genomics-and-bioinformatics-asia-20240512/)
 
 ## Training Team
 
@@ -25,6 +28,13 @@ The Viral Genomics and Bioinformatics course will teach participants how to anal
 - [Ny Nguyen Thi Han](https://orcid.org/0000-0002-9833-2921), Oxford University Clinical Research Unit, Vietnam
 - [Sanket Limaye](https://www.linkedin.com/in/sanket-limaye-2551b6105/?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app), Savitribai Phule Pune University, India
 - [Jonathan Chan](https://www.linkedin.com/in/jonathan-chan-669129120/), University of Malaysia, Sarawak, Malaysia
+
+**Wellcome Connecting Science Team**
+
+- [Martin Aslett](https://coursesandconferences.wellcomeconnectingscience.org/about-us/the-team/), Informatics Manager
+- [Vaishnavi Vikas Gangadhar](https://www.wellcomeconnectingscience.org/person/gangadhar-vaishnavi/), Informatics Technical Officer
+- [Nicola Stevens](https://www.wellcomeconnectingscience.org/person/stevens-nicola/), Events Organiser
+- [Isabela Malta](https://www.wellcomeconnectingscience.org/person/malta-isabela/), Assistant Overseas Courses Manager
 
 ******
 ## License
